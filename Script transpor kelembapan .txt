@@ -1,13 +1,13 @@
 'reinit'
 
-* --- DEFINISI VARIABEL ---
+* --- DEFINE VARIABEL ---
 tahunbulan = "202304"
 tanggalkejadian = "20230413"
 
 * Buka data
-'sdfopen D:\anto\gelombang\transporuap\'tahunbulan'\specific_humidity_stream-oper_daily-mean.nc'
-'sdfopen D:\anto\gelombang\transporuap\'tahunbulan'\u_component_of_wind_0_daily-mean.nc'
-'sdfopen D:\anto\gelombang\transporuap\'tahunbulan'\v_component_of_wind_0_daily-mean.nc'
+'sdfopen D:\transpor\'tahunbulan'\specific_humidity_stream-oper_daily-mean.nc'
+'sdfopen D:\transpor\'tahunbulan'\u_component_of_wind_0_daily-mean.nc'
+'sdfopen D:\transpor\'tahunbulan'\v_component_of_wind_0_daily-mean.nc'
 
 * Matikan tulisan grads
 'set timelab off'
@@ -18,7 +18,7 @@ tanggalkejadian = "20230413"
 'set lat -30 0'
 'set t 3'
 
-* Set warna lebih soft di bawah 200, misalnya putih untuk <200
+* Set warna
 'set rgb 99 255 255 255'    
 'set rgb 100 200 255 255'   
 'set rgb 101 100 200 255'   
@@ -49,23 +49,6 @@ tanggalkejadian = "20230413"
 'set mpdset hires'
 'draw map'
 
-* --- Konversi koordinat kotak ke layar (X,Y) ---
-'q w2xy 105 -25'
-* simpan hasil di var1 (x1 y1)
-'q w2xy 110 -25'
-* simpan hasil di var2 (x2 y2)
-'q w2xy 110 -30'
-* simpan hasil di var3 (x3 y3)
-'q w2xy 105 -30'
-* simpan hasil di var4 (x4 y4)
-
-* Ambil koordinat dari hasil di atas secara manual:
-* Misal output-nya:
-* 105 -25 = 4.52778 1.91667
-* 110 -25 = 5.5 1.91667
-* 110 -30 = 5.5 0.75
-* 105 -30 = 4.52778 0.75
-
 * Set garis kotak hitam
 'set line 2 1 9'
 'draw line 4.52778 1.91667 5.5 1.91667'   
@@ -79,4 +62,5 @@ tanggalkejadian = "20230413"
 'draw string 9.75 1.2 kg/m/s'
 
 * Simpan hasil ke gambar PNG
-'printim D:\anto\gelombang\transporuap\'tahunbulan'\ivt_kejadian5.png png white'
+'printim D:\transpor\'tahunbulan'\ivt.png png white'
+
